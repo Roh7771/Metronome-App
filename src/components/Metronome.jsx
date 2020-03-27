@@ -31,6 +31,12 @@ const Container = styled.div`
   align-items: center;
   width: 40%;
   margin: 20px auto 0px auto;
+  @media(max-width: 650px) {
+    width: 60%;
+  }
+  @media(max-width: 450px) {
+    width: 80%;
+  }
 `;
 
 const BPM = styled.div`
@@ -131,7 +137,9 @@ const Input = styled.input`
   }
 `;
 
-function Metronome({ onStart, onChange, bpm, onStop, isStarted }) {
+function Metronome({
+  onStart, onChange, bpm, onStop, isStarted,
+}) {
   const startFunc = () => onStart(bpm);
   const stopFunc = () => onStop();
   return (
